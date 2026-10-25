@@ -1,33 +1,27 @@
-========================================
- Phomps Shop - Projeto E-commerce 
-========================================
+Aluno: Hiago Pompilio da Costa
+Matricula : 202502502826
+  
+Phomps Shop - Projeto E-commerce 
 
-O QUE É ESTE PROJETO
---------------------
-Landing page responsiva de uma loja virtual fictícia chamada Phomps Shop
-(produtos de tecnologia). Desenvolvida com HTML5 , CSS Mobile 
-e JavaScript básico.
+
+Página da loja virtual fictícia Phomps Shop
+(produtos de tecnologia). Desenvolvida com HTML5, CSS e JavaScript.
 
 ESTRUTURA DE PASTAS
--------------------
+
 projeto-ecommerce/
 ├── index.html          → Página principal
 ├── css/
 │   └── style.css       → Estilos (Mobile First + 2 breakpoints)
 ├── js/
-│   └── script.js       → Menu, cálculo de frete e validação do formulário
+│   └── script.js       → Menu, carrinho, frete e validação
 ├── img/
-│   ├── produto1.jpg    → Imagens dos produtos (placeholders)
-│   ├── produto2.jpg
-│   ├── produto3.jpg
-│   ├── produto4.jpg
-│   ├── produto5.jpg
-│   └── produto6.jpg
+│   ├── produto1.jpg … produto6.jpg
 └── LEIAME.txt          → Este arquivo
 
 
 COMO ABRIR O PROJETO
---------------------
+
 1. Baixe ou clone o repositório.
 2. Abra a pasta "projeto-ecommerce".
 3. Clique duas vezes no arquivo "index.html"
@@ -36,33 +30,3 @@ COMO ABRIR O PROJETO
    - Pressione F12 (DevTools)
    - Ative o modo de dispositivo (ícone de celular/tablet)
    - Teste nas larguras: celular (~375px), tablet (~768px) e notebook (~1024px+)
-
-
-O QUE FOI IMPLEMENTADO
-----------------------
-✓ HTML5 semântico: header, nav, main, section, footer
-✓ Tag viewport e atributos alt nas imagens
-✓ CSS externo com abordagem Mobile First
-✓ 2 breakpoints com min-width: 768px (tablet) e 1024px (notebook)
-✓ Layout com Flexbox e CSS Grid
-✓ Sem rolagem lateral (overflow-x: hidden)
-✓ Vitrine com 6 produtos
-✓ Formulário de contato com 3 campos (nome, e-mail, mensagem)
-✓ Validação nativa HTML5 + validação extra em JavaScript
-✓ Cálculo de frete com if/else:
-    - Compra ≥ R$ 300 → frete grátis
-    - Compra ≥ R$ 150 → frete R$ 15,00
-    - Compra < R$ 150 → frete R$ 25,00
-✓ Menu hamburger que abre e fecha no mobile
-
-
-OBSERVAÇÕES
------------
-- As imagens em /img são placeholders coloridos. Você pode substituí-las
-  por fotos reais mantendo os mesmos nomes de arquivo.
-- O formulário de contato apenas simula o envio (não envia e-mail de verdade).
-- O cálculo de frete é uma simulação didática (não consulta API de CEP).
-
-
-Autor: Hiago Pompilio da Costa
-Data: 24/10/2026
