@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phomps Shop | Sua loja de tecnologia</title>
+  <meta name="description" content="Landing page da Phomps Shop - e-commerce de produtos de tecnologia.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="#inicio" class="logo" aria-label="Phomps Shop - Página inicial">
+        <span class="logo__icon">🛍️</span>
+        <span class="logo__text">Phomps Shop</span>
+      </a>
+
+      <div class="header__actions">
+        <button class="cart-btn" id="cart-btn" type="button" aria-label="Carrinho de compras">
+          <span class="cart-btn__icon">🛒</span>
+          <span class="cart-btn__count" id="cart-count">0</span>
+        </button>
+
+        <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+          <span class="menu-toggle__bar"></span>
+          <span class="menu-toggle__bar"></span>
+          <span class="menu-toggle__bar"></span>
+        </button>
+      </div>
+
+      <nav class="nav" id="nav" aria-label="Menu principal">
+        <ul class="nav__list">
+          <li><a href="#inicio" class="nav__link">Início</a></li>
+          <li><a href="#produtos" class="nav__link">Produtos</a></li>
+          <li><a href="#frete" class="nav__link">Calcular Frete</a></li>
+          <li><a href="#contato" class="nav__link">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Toast de feedback -->
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+
+  <main>
+    <!-- HERO -->
+    <section id="inicio" class="hero">
+      <div class="container hero__content">
+        <p class="hero__badge">Nova coleção 2026</p>
+        <h1 class="hero__title">Tecnologia com o seu estilo</h1>
+        <p class="hero__subtitle">Gadgets e acessórios selecionados, frete calculado na hora e entrega para todo o Brasil.</p>
+        <div class="hero__buttons">
+          <a href="#produtos" class="btn btn--primary">Ver produtos</a>
+          <a href="#frete" class="btn btn--ghost">Calcular frete</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- VITRINE -->
+    <section id="produtos" class="products">
+      <div class="container">
+        <header class="section-header">
+          <h2 class="section-title">Nossos Produtos</h2>
+          <p class="section-subtitle">Escolha e adicione ao carrinho</p>
+        </header>
+
+        <div class="products__grid">
+          <article class="card">
+            <div class="card__badge">Mais vendido</div>
+            <img src="img/produto1.jpg" alt="Fone de ouvido Bluetooth JBL Wave Buds preto com estojo de carregamento" class="card__img" width="300" height="200">
+            <div class="card__body">
+              <h3 class="card__title">JBL Wave Buds</h3>
+              <p class="card__desc">Som JBL Deep Bass, bateria até 32h (8h + 24h no estojo) e carregamento rápido</p>
+              <p class="card__price">R$ 229,90</p>
+              <button class="btn btn--outline btn-add" type="button" data-nome="JBL Wave Buds" data-preco="229.90">
+                Adicionar
+              </button>
+            </div>
+          </article>
+
+          <article class="card">
+            <img src="img/produto2.jpg" alt="Smartband Samsung Galaxy Fit3 na cor grafite com tela AMOLED" class="card__img" width="300" height="200">
+            <div class="card__body">
+              <h3 class="card__title">Samsung Galaxy Fit3</h3>
+              <p class="card__desc">Tela AMOLED 1,6", monitoramento cardíaco e sono, até 13 dias de bateria</p>
+              <p class="card__price">R$ 249,00</p>
+              <button class="btn btn--outline btn-add" type="button" data-nome="Samsung Galaxy Fit3" data-preco="249.00">
+                Adicionar
+              </button>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__badge card__badge--promo">Promo</div>
+            <img src="img/produto3.jpg" alt="Mouse gamer Redragon Cobra preto com iluminação RGB" class="card__img" width="300" height="200">
+            <div class="card__body">
+              <h3 class="card__title">Mouse Redragon Cobra</h3>
+              <p class="card__desc">Sensor Pixart até 12.400 DPI, RGB Chroma e 8 botões programáveis</p>
+              <p class="card__price">R$ 119,90</p>
+              <button class="btn btn--outline btn-add" type="button" data-nome="Mouse Redragon Cobra" data-preco="119.90">
+                Adicionar
+              </button>
+            </div>
+          </article>
+
+          <article class="card">
+            <img src="img/produto4.jpg" alt="Teclado mecânico Redragon Valheim preto com iluminação rainbow e layout ABNT2" class="card__img" width="300" height="200">
+            <div class="card__body">
+              <h3 class="card__title">Teclado Redragon Valheim</h3>
+              <p class="card__desc">Switch azul Hot Swap, iluminação Rainbow, layout ABNT2 full-size</p>
+              <p class="card__price">R$ 239,90</p>
+              <button class="btn btn--outline btn-add" type="button" data-nome="Teclado Redragon Valheim" data-preco="239.90">
+                Adicionar
+              </button>
+            </div>
+          </article>
+
+          <article class="card">
+            <img src="img/produto5.jpg" alt="Power bank Samsung bege 20000mAh com 3 portas USB-C" class="card__img" width="300" height="200">
+            <div class="card__body">
+              <h3 class="card__title">Power Bank Samsung 20.000mAh</h3>
+              <p class="card__desc">3x USB-C, carregamento super rápido 45W — ideal para Galaxy</p>
+              <p class="card__price">R$ 249,90</p>
+              <button class="btn btn--outline btn-add" type="button" data-nome="Power Bank Samsung 20.000mAh" data-preco="249.90">
+                Adicionar
+              </button>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__badge">Novo</div>
+            <img src="img/produto6.jpg" alt="Webcam Full HD Logitech C920s preta com microfone e proteção de privacidade" class="card__img" width="300" height="200">
+            <div class="card__body">
+              <h3 class="card__title">Logitech C920s Full HD</h3>
+              <p class="card__desc">1080p, microfone embutido, proteção de privacidade e Logitech Capture</p>
+              <p class="card__price">R$ 449,90</p>
+              <button class="btn btn--outline btn-add" type="button" data-nome="Logitech C920s Full HD" data-preco="449.90">
+                Adicionar
+              </button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FRETE -->
+    <section id="frete" class="shipping">
+      <div class="container">
+        <header class="section-header">
+          <h2 class="section-title">Calcule o Frete</h2>
+          <p class="section-subtitle">Informe o CEP e o valor da compra</p>
+        </header>
+
+        <div class="shipping__box">
+          <form id="form-frete" class="form-frete" novalidate>
+            <div class="form-group">
+              <label for="cep">CEP de destino</label>
+              <input type="text" id="cep" name="cep" placeholder="Ex: 24000-000" maxlength="9" required>
+            </div>
+            <div class="form-group">
+              <label for="valor">Valor da compra (R$)</label>
+              <input type="number" id="valor" name="valor" placeholder="Ex: 250" min="1" step="0.01" required>
+            </div>
+            <button type="submit" class="btn btn--primary btn--full">Calcular frete</button>
+          </form>
+          <div id="resultado-frete" class="resultado-frete" role="status" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato" class="contact">
+      <div class="container">
+        <header class="section-header">
+          <h2 class="section-title">Fale Conosco</h2>
+          <p class="section-subtitle">Dúvidas ou pedidos especiais? Envie uma mensagem</p>
+        </header>
+
+        <form id="form-contato" class="form-contato" novalidate>
+          <div class="form-group">
+            <label for="nome">Nome completo</label>
+            <input type="text" id="nome" name="nome" placeholder="Seu nome" required minlength="3">
+            <span class="error-msg" id="erro-nome"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+            <span class="error-msg" id="erro-email"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" rows="4" placeholder="Escreva sua mensagem..." required minlength="10"></textarea>
+            <span class="error-msg" id="erro-mensagem"></span>
+          </div>
+
+          <button type="submit" class="btn btn--primary btn--full">Enviar mensagem</button>
+          <p id="msg-sucesso" class="msg-sucesso" hidden>Mensagem enviada com sucesso! Em breve entraremos em contato.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="footer__brand">Phomps Shop</p>
+      <p>&copy; 2026 Phomps Shop. Todos os direitos reservados.</p>
+      <p class="footer__note">Projeto acadêmico — Landing page responsiva com HTML5, CSS e JavaScript.</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
