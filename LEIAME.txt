@@ -8,16 +8,27 @@ Página da loja virtual fictícia Phomps Shop
 (produtos de tecnologia). Desenvolvida com HTML5, CSS e JavaScript.
 
 ESTRUTURA DE PASTAS
-
+-------------------
 projeto-ecommerce/
-├── index.html          → Página principal
+├── index.html          → Página principal (landing)
+├── carrinho.html       → Página do carrinho
 ├── css/
-│   └── style.css       → Estilos (Mobile First + 2 breakpoints)
+│   └── style.css
 ├── js/
-│   └── script.js       → Menu, carrinho, frete e validação
+│   ├── script.js       → Menu, adicionar ao carrinho, frete, formulário
+│   └── cart.js         → Lógica da página do carrinho
 ├── img/
 │   ├── produto1.jpg … produto6.jpg
-└── LEIAME.txt          → Este arquivo
+│   └── (coloque logo.png aqui se quiser logo em imagem)
+└── LEIAME.txt
+
+
+COMO ABRIR
+----------
+1. Extraia a pasta.
+2. Abra index.html no navegador.
+3. Clique em "Adicionar" nos produtos → o contador do 🛒 sobe.
+4. Clique no 🛒 → abre carrinho.html com os itens salvos.
 
 
 COMO ABRIR O PROJETO
