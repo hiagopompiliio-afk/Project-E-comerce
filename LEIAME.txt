@@ -31,13 +31,4 @@ COMO ABRIR
 4. Clique no 🛒 → abre carrinho.html com os itens salvos.
 
 
-COMO ABRIR O PROJETO
 
-1. Baixe ou clone o repositório.
-2. Abra a pasta "projeto-ecommerce".
-3. Clique duas vezes no arquivo "index.html"
-   OU abra-o pelo navegador (Chrome, Firefox, Edge etc.).
-4. Para testar a responsividade:
-   - Pressione F12 (DevTools)
-   - Ative o modo de dispositivo (ícone de celular/tablet)
-   - Teste nas larguras: celular (~375px), tablet (~768px) e notebook (~1024px+)
