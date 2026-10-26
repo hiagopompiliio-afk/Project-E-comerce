@@ -1,9 +1,10 @@
-
+/* 
    Phomps Shop - JavaScript básico
    - Menu abre/fecha
    - Botão Adicionar (carrinho)
    - Cálculo de frete com if/else
    - Validação do formulário de contato
+   */
 
 document.addEventListener("DOMContentLoaded", function () {
   // ---------- MENU MOBILE ----------
@@ -28,15 +29,39 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // ---------- CARRINHO / BOTÃO ADICIONAR ----------
-  let quantidadeCarrinho = 0;
-  const cartCount = document.getElementById("cart-count");
+  const CHAVE_CARRINHO = "phomps_carrinho";
+
+  function lerCarrinho() {
+    try {
+      const dados = localStorage.getItem(CHAVE_CARRINHO);
+      return dados ? JSON.parse(dados) : [];
+    } catch (e) {
+      return [];
+    }
+  }
+
+  function salvarCarrinho(itens) {
+    localStorage.setItem(CHAVE_CARRINHO, JSON.stringify(itens));
+  }
+
+  function totalItens(itens) {
+    return itens.reduce(function (soma, item) {
+      return soma + item.quantidade;
+    }, 0);
+  }
+
+  function atualizarContador() {
+    const el = document.getElementById("cart-count");
+    if (el) el.textContent = totalItens(lerCarrinho());
+  }
+
   const toast = document.getElementById("toast");
   let toastTimer = null;
 
   function mostrarToast(texto) {
+    if (!toast) return;
     toast.textContent = texto;
     toast.hidden = false;
-    // força reflow para animar
     toast.classList.remove("show");
     void toast.offsetWidth;
     toast.classList.add("show");
@@ -50,16 +75,29 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 2200);
   }
 
+  // Carrega contador ao abrir a página
+  atualizarContador();
+
   const botoesAdd = document.querySelectorAll(".btn-add");
   botoesAdd.forEach(function (botao) {
     botao.addEventListener("click", function () {
       const nome = botao.getAttribute("data-nome");
-      const preco = botao.getAttribute("data-preco");
+      const preco = parseFloat(botao.getAttribute("data-preco"));
 
-      quantidadeCarrinho = quantidadeCarrinho + 1;
-      cartCount.textContent = quantidadeCarrinho;
+      const itens = lerCarrinho();
+      const existente = itens.find(function (item) {
+        return item.nome === nome;
+      });
 
-      // feedback visual no botão
+      if (existente) {
+        existente.quantidade += 1;
+      } else {
+        itens.push({ nome: nome, preco: preco, quantidade: 1 });
+      }
+
+      salvarCarrinho(itens);
+      atualizarContador();
+
       const textoOriginal = botao.textContent;
       botao.textContent = "Adicionado ✓";
       botao.classList.add("added");
@@ -73,15 +111,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
       mostrarToast(nome + " adicionado ao carrinho!");
     });
-  });
-
-  // Clique no ícone do carrinho
-  document.getElementById("cart-btn").addEventListener("click", function () {
-    if (quantidadeCarrinho === 0) {
-      mostrarToast("Seu carrinho está vazio.");
-    } else {
-      mostrarToast("Você tem " + quantidadeCarrinho + " item(ns) no carrinho.");
-    }
   });
 
   // ---------- CÁLCULO DE FRETE (if/else) ----------
