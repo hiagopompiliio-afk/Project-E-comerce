@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrinho | Phomps Shop</title>
+  <meta name="description" content="Seu carrinho de compras - Phomps Shop">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header__inner">
+      <a href="index.html" class="logo" aria-label="Phomps Shop - Página inicial">
+        <img src="img/logo.jpg" alt="Phomps Shop" class="logo__img">
+      </a>
+
+      <div class="header__actions">
+        <a href="carrinho.html" class="cart-btn" aria-label="Carrinho de compras">
+          <span class="cart-btn__icon">🛒</span>
+          <span class="cart-btn__count" id="cart-count">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="cart-page">
+    <div class="container">
+      <header class="section-header">
+        <h1 class="section-title">Meu Carrinho</h1>
+        <p class="section-subtitle">Revise seus itens antes de finalizar</p>
+      </header>
+
+      <div id="cart-empty" class="cart-empty" hidden>
+        <p class="cart-empty__icon">🛒</p>
+        <p class="cart-empty__text">Seu carrinho está vazio.</p>
+        <a href="index.html#produtos" class="btn btn--primary">Ver produtos</a>
+      </div>
+
+      <div id="cart-content" class="cart-content" hidden>
+        <ul id="cart-list" class="cart-list"></ul>
+
+        <div class="cart-summary">
+          <p class="cart-summary__line">
+            <span>Subtotal</span>
+            <strong id="cart-subtotal">R$ 0,00</strong>
+          </p>
+          <p class="cart-summary__hint">O frete é calculado na página inicial.</p>
+          <div class="cart-summary__actions">
+            <a href="index.html#produtos" class="btn btn--outline">Continuar comprando</a>
+            <button type="button" id="btn-limpar" class="btn btn--ghost-dark">Limpar carrinho</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="footer__brand">Phomps Shop</p>
+      <p>&copy; 2026 Phomps Shop. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="js/cart.js"></script>
+</body>
+</html>
