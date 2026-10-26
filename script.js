@@ -1,10 +1,9 @@
-/* ========================================
+
    Phomps Shop - JavaScript básico
    - Menu abre/fecha
    - Botão Adicionar (carrinho)
    - Cálculo de frete com if/else
    - Validação do formulário de contato
-   ======================================== */
 
 document.addEventListener("DOMContentLoaded", function () {
   // ---------- MENU MOBILE ----------
